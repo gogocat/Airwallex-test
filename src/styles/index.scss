@@ -1,0 +1,42 @@
+@import './variables';
+@import './mixin';
+@import './utils';
+@import './form';
+
+html, body {
+    height: 100%;
+    margin: 0px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+
+    @include breakpoint(sm) {
+        overflow-x: inherit;
+    }
+    overflow-x: hidden;
+}
+
+h1,
+h2 {
+    font-weight: lighter;
+}
+
+a {
+    color: $link-blue;
+}
+
+.sr-only {
+    clip: rect(0 0 0 0); 
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap; 
+    width: 1px;
+}

@@ -1,0 +1,11 @@
+.form-row {
+    display: flex;
+
+    &.inline-item {
+        align-items: center;
+    }
+
+    .inline-label {
+        margin-right: 1rem;
+    }
+}
