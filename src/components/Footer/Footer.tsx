@@ -7,8 +7,9 @@ import './Footer.scss';
 function Copyright() {
     return (
       <Typography variant="body2" color="text.secondary" align="center">
-        {'Copyright © '}
+        {'© '}
         {new Date().getFullYear()}
+        {' Broccoli & co. All rights reserved.'}
         {'.'}
       </Typography>
     );
@@ -21,16 +22,13 @@ function Footer() {
             component="footer"
             className='footer'
         >
-            <Typography variant="h6" align="center" gutterBottom>
-                BROCCOLI & CO.
-            </Typography>
             <Typography
                 variant="subtitle1"
                 align="center"
                 color="text.secondary"
                 component="p"
             >
-                Something here to give the footer a purpose!
+                Make with &hearts; in Melbourne.
             </Typography>
             <Copyright />
         </Box>
