@@ -28,7 +28,7 @@ function Footer() {
                 color="text.secondary"
                 component="p"
             >
-                Make with &hearts; in Melbourne.
+                Made with &hearts; in Melbourne.
             </Typography>
             <Copyright />
         </Box>

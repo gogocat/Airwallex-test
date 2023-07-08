@@ -74,7 +74,7 @@ function HeroIntro() {
                 aria-labelledby="responsive-dialog-title"
             >
                 <DialogTitle id="responsive-dialog-title">
-                    {"Use Google's location service?"}
+                    {'Request an invite'}
                 </DialogTitle>
                 <DialogContent>
                     <InviteForm />

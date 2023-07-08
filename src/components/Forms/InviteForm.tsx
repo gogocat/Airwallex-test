@@ -4,11 +4,14 @@ import {
   Form
 } from 'formik';
 import Button from '@mui/material/Button';
+import Alert from '@mui/material/Alert';
 import TextInputField from 'components/TextInputField/TextInputField';
 import {
   inviteFormValidationSchema,
   inviteFormValidationInitValues,
 } from 'validationSchemas/inviteFormValidationSchema';
+import { postInvite } from 'services/inviteService';
+import './InviteForm.scss';
 
 interface IInviteFormProps {
   classNames?: string
@@ -26,13 +29,29 @@ function InviteForm(props: IInviteFormProps) {
     ? 'Send'
     : 'Sending, please wait...'
 
-  const handleFormSubmit = (values: any) => {
-    setIsSubmitting(true);
-    setTimeout(() => {
+  const handleFormSubmit = async (values: any) => {
+    try {
+      const {
+        fullName,
+        email,
+      } = values;
+
+      if (isSubmitting) {
+        return;
+      }
+  
+      setIsSubmitting(true);
+  
+      await postInvite({
+        name: fullName,
+        email,
+      });
+      
       setIsSubmitting(false);
-      setSubmissionError('nope!');
-      alert(JSON.stringify(values, null, 2));
-    }, 2000);
+    } catch(err) {
+      setIsSubmitting(false);
+      setSubmissionError('Something went wrong. Please try again later.');
+    }
   };
 
   return (
@@ -58,19 +77,26 @@ function InviteForm(props: IInviteFormProps) {
             name="confirmEmail"
             label="Confirm email"
           />
-          <Button 
-            color="primary" 
-            variant="contained" 
-            fullWidth type="submit"
-          >
-            {submitButtonText}
-          </Button>
-          { submissionError && (
-            <div>
-              {submissionError}
-            </div>
-            )
-          }
+          <div className="invite-form__button-section">
+            <Button 
+              color="primary" 
+              variant="contained" 
+              fullWidth 
+              type="submit"
+              disabled={isSubmitting}
+            >
+              {submitButtonText}
+            </Button>
+            { submissionError && (
+              <Alert 
+                className="invite-form__error-message"
+                severity="error"
+              >
+                {submissionError}
+              </Alert>
+              )
+            }
+          </div>
         </Form>
       </Formik>
     </div>
