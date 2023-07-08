@@ -1,9 +1,10 @@
-import * as React from 'react';
+import React from 'react';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
+import InviteForm from 'components/Forms/InviteForm';
 
 import './HeroIntro.scss';
 
@@ -38,6 +39,8 @@ function HeroIntro() {
                 >
                     <Button variant="contained">Request an invite</Button>
                 </Stack>
+
+                <InviteForm />
             </Container>
         </Box>
     );
