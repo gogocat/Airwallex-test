@@ -17,7 +17,7 @@ export async function postInvite(data: IIviteData) {
             body: safeJsonStringify(data),
         });
         
-        if (response.status === 200) {
+        if (response.status !== 200) {
             throw new Error('Registration error');
         }
     

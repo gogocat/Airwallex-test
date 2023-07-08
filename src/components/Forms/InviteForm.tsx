@@ -15,15 +15,18 @@ import './InviteForm.scss';
 
 interface IInviteFormProps {
   classNames?: string
+  onSuccess?: any
 }
 
 function InviteForm(props: IInviteFormProps) {
   const {
-    classNames = 'invite-form'
+    classNames = 'invite-form',
+    onSuccess = () => {},
   } = props;
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submissionError, setSubmissionError] = useState('');
+  const [showSuccessScreen, setSuccessScreen] = useState(false);
 
   const submitButtonText = !isSubmitting
     ? 'Send'
@@ -48,14 +51,39 @@ function InviteForm(props: IInviteFormProps) {
       });
       
       setIsSubmitting(false);
+      setSuccessScreen(true);
     } catch(err) {
       setIsSubmitting(false);
       setSubmissionError('Something went wrong. Please try again later.');
     }
   };
 
+  if (showSuccessScreen) {
+    return (
+        <div className={classNames}>
+          <h2>All done!</h2>
+          <p>
+            You will be one of the first to experience
+            Broccoli & co. when we launch.
+          </p>
+          <div className="invite-form__button-section">
+              <Button 
+                color="primary" 
+                variant="contained" 
+                fullWidth 
+                type="button"
+                onClick={onSuccess}
+              >
+                OK
+              </Button>
+            </div>
+        </div>
+    );
+  }
+
   return (
     <div className={classNames}>
+      <h2>Request an invite</h2>
       <Formik
         initialValues={inviteFormValidationInitValues}
         validationSchema={inviteFormValidationSchema}

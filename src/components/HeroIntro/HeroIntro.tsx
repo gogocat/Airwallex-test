@@ -5,10 +5,9 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
 import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogTitle from '@mui/material/DialogTitle';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 import InviteForm from 'components/Forms/InviteForm';
@@ -20,11 +19,14 @@ function HeroIntro() {
     const theme = useTheme();
     const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
 
-    const handleClickOpen = () => {
+    const handleDialogOpen = () => {
         setOpen(true);
     };
 
-    const handleClose = () => {
+    const handleDialogClose = (event: any, reason: string) => {
+        if (reason === 'backdropClick') {
+            return;
+        }
         setOpen(false);
     };
 
@@ -58,35 +60,29 @@ function HeroIntro() {
                 >
                     <Button 
                         variant="contained"
-                        onClick={handleClickOpen}
+                        onClick={handleDialogOpen}
                     >
                         Request an invite
                     </Button>
                 </Stack>
-
-                
             </Container>
 
             <Dialog
                 fullScreen={fullScreen}
                 open={open}
-                onClose={handleClose}
+                onClose={handleDialogClose}
                 aria-labelledby="responsive-dialog-title"
             >
-                <DialogTitle id="responsive-dialog-title">
-                    {'Request an invite'}
-                </DialogTitle>
-                <DialogContent>
-                    <InviteForm />
+                <div className="dialog-close">
+                    <IconButton onClick={(e)=>{handleDialogClose(e, '')}}>
+                        <CloseIcon />
+                    </IconButton>
+                </div>
+                <DialogContent className="dialog-content">
+                    <InviteForm
+                        onSuccess={handleDialogClose}
+                    />
                 </DialogContent>
-                <DialogActions>
-                    <Button autoFocus onClick={handleClose}>
-                        Disagree
-                    </Button>
-                    <Button onClick={handleClose} autoFocus>
-                        Agree
-                    </Button>
-                </DialogActions>
             </Dialog>
         </Box>
     );
