@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1688866480267" clover="3.2.0">
-  <project timestamp="1688866480267" name="All files">
-    <metrics statements="68" coveredstatements="21" conditionals="28" coveredconditionals="1" methods="18" coveredmethods="7" elements="114" coveredelements="29" complexity="0" loc="68" ncloc="68" packages="11" files="12" classes="12"/>
+<coverage generated="1688906471725" clover="3.2.0">
+  <project timestamp="1688906471725" name="All files">
+    <metrics statements="68" coveredstatements="41" conditionals="28" coveredconditionals="12" methods="18" coveredmethods="11" elements="114" coveredelements="64" complexity="0" loc="68" ncloc="68" packages="11" files="12" classes="12"/>
     <package name="src">
       <metrics statements="11" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="0"/>
       <file name="index.tsx" path="/Users/adamchow/Documents/workspace/Airwallex/Airwallex-test/src/index.tsx">
@@ -39,28 +39,28 @@
       </file>
     </package>
     <package name="src.components.Forms">
-      <metrics statements="19" coveredstatements="0" conditionals="10" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <metrics statements="19" coveredstatements="16" conditionals="10" coveredconditionals="6" methods="3" coveredmethods="2"/>
       <file name="InviteForm.tsx" path="/Users/adamchow/Documents/workspace/Airwallex/Airwallex-test/src/components/Forms/InviteForm.tsx">
-        <metrics statements="19" coveredstatements="0" conditionals="10" coveredconditionals="0" methods="3" coveredmethods="0"/>
-        <line num="25" count="0" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
-        <line num="29" count="0" type="stmt"/>
-        <line num="31" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="35" count="0" type="stmt"/>
-        <line num="36" count="0" type="stmt"/>
-        <line num="40" count="0" type="stmt"/>
-        <line num="42" count="0" type="cond" truecount="0" falsecount="2"/>
+        <metrics statements="19" coveredstatements="16" conditionals="10" coveredconditionals="6" methods="3" coveredmethods="2"/>
+        <line num="25" count="3" type="stmt"/>
+        <line num="27" count="3" type="stmt"/>
+        <line num="28" count="3" type="stmt"/>
+        <line num="29" count="3" type="stmt"/>
+        <line num="31" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="35" count="3" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="42" count="1" type="cond" truecount="1" falsecount="1"/>
         <line num="43" count="0" type="stmt"/>
-        <line num="46" count="0" type="stmt"/>
-        <line num="48" count="0" type="stmt"/>
-        <line num="53" count="0" type="stmt"/>
-        <line num="54" count="0" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
+        <line num="48" count="1" type="stmt"/>
+        <line num="53" count="1" type="stmt"/>
+        <line num="54" count="1" type="stmt"/>
         <line num="56" count="0" type="stmt"/>
         <line num="57" count="0" type="stmt"/>
-        <line num="61" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="62" count="0" type="stmt"/>
-        <line num="84" count="0" type="stmt"/>
+        <line num="61" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="62" count="1" type="stmt"/>
+        <line num="84" count="2" type="stmt"/>
       </file>
     </package>
     <package name="src.components.Header">
@@ -71,29 +71,29 @@
       </file>
     </package>
     <package name="src.components.HeroIntro">
-      <metrics statements="11" coveredstatements="6" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="1"/>
+      <metrics statements="11" coveredstatements="7" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="2"/>
       <file name="HeroIntro.tsx" path="/Users/adamchow/Documents/workspace/Airwallex/Airwallex-test/src/components/HeroIntro/HeroIntro.tsx">
-        <metrics statements="11" coveredstatements="6" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="1"/>
-        <line num="18" count="2" type="stmt"/>
-        <line num="19" count="2" type="stmt"/>
-        <line num="20" count="2" type="stmt"/>
-        <line num="22" count="2" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="26" count="2" type="stmt"/>
+        <metrics statements="11" coveredstatements="7" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="2"/>
+        <line num="18" count="7" type="stmt"/>
+        <line num="19" count="7" type="stmt"/>
+        <line num="20" count="7" type="stmt"/>
+        <line num="22" count="7" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="26" count="7" type="stmt"/>
         <line num="27" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="28" count="0" type="stmt"/>
         <line num="30" count="0" type="stmt"/>
-        <line num="33" count="2" type="stmt"/>
+        <line num="33" count="7" type="stmt"/>
         <line num="77" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.components.TextInputField">
-      <metrics statements="3" coveredstatements="0" conditionals="7" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <metrics statements="3" coveredstatements="3" conditionals="7" coveredconditionals="5" methods="1" coveredmethods="1"/>
       <file name="TextInputField.tsx" path="/Users/adamchow/Documents/workspace/Airwallex/Airwallex-test/src/components/TextInputField/TextInputField.tsx">
-        <metrics statements="3" coveredstatements="0" conditionals="7" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="18" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="22" count="0" type="stmt"/>
+        <metrics statements="3" coveredstatements="3" conditionals="7" coveredconditionals="5" methods="1" coveredmethods="1"/>
+        <line num="18" count="102" type="stmt"/>
+        <line num="20" count="102" type="stmt"/>
+        <line num="22" count="102" type="stmt"/>
       </file>
     </package>
     <package name="src.constants">
@@ -119,24 +119,24 @@
       <metrics statements="10" coveredstatements="7" conditionals="3" coveredconditionals="1" methods="3" coveredmethods="2"/>
       <file name="index.js" path="/Users/adamchow/Documents/workspace/Airwallex/Airwallex-test/src/utils/index.js">
         <metrics statements="10" coveredstatements="7" conditionals="3" coveredconditionals="1" methods="3" coveredmethods="2"/>
-        <line num="1" count="2" type="stmt"/>
+        <line num="1" count="3" type="stmt"/>
         <line num="2" count="0" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
         <line num="5" count="0" type="stmt"/>
-        <line num="10" count="2" type="cond" truecount="0" falsecount="1"/>
-        <line num="11" count="2" type="stmt"/>
-        <line num="13" count="2" type="stmt"/>
-        <line num="14" count="6" type="cond" truecount="1" falsecount="1"/>
-        <line num="15" count="6" type="stmt"/>
-        <line num="19" count="2" type="stmt"/>
+        <line num="10" count="3" type="cond" truecount="0" falsecount="1"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="14" count="9" type="cond" truecount="1" falsecount="1"/>
+        <line num="15" count="9" type="stmt"/>
+        <line num="19" count="3" type="stmt"/>
       </file>
     </package>
     <package name="src.validationSchemas">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="inviteFormValidationSchema.ts" path="/Users/adamchow/Documents/workspace/Airwallex/Airwallex-test/src/validationSchemas/inviteFormValidationSchema.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="4" count="2" type="stmt"/>
-        <line num="18" count="2" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
       </file>
     </package>
   </project>

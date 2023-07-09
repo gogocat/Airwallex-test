@@ -3,16 +3,35 @@ import {
     render,
     screen,
     act,
+    waitFor,
 } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import HeroIntro from './HeroIntro';
 import { postInvite } from 'services/inviteService';
 
 jest.mock('services/inviteService', () => ({ 
-    postInvite: jest.fn(),
+    postInvite: jest.fn().mockResolvedValue('Registered'),
 }));
 
 describe('HeroIntro', () => {
+
+    let originalFetch: any;
+
+    beforeEach(() => {
+        originalFetch = global.fetch;
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        global.fetch = jest.fn(() => Promise.resolve({
+            json: () => Promise.resolve({
+                value: 'Testing something!'
+            })
+        }));
+    });
+
+    afterEach(() => {
+        global.fetch = originalFetch;
+    });
+      
     it('should renders with HeroIntro content', () => {
         const {
             asFragment,
@@ -73,15 +92,12 @@ describe('HeroIntro', () => {
             await user.click(sendButton);
         });
 
-        // const sumittingButton = screen.getByRole('button', { name: 'Sending, please wait...' });
-
-        expect(postInvite).toHaveBeenCalledTimes(1);
-        expect(postInvite).toHaveBeenCalledWith({
-            email: mockData.email,
-            name: mockData.fullName
+        await waitFor(() => {
+            expect(postInvite).toHaveBeenCalledTimes(1);
+            expect(postInvite).toHaveBeenCalledWith({
+                email: mockData.email,
+                name: mockData.fullName
+            });
         });
-
-        // const successTitle = await screen.findByText('All done!', { selector: 'h2' });
-        // expect(sumittingButton).toBeInTheDocument();
     });
 });
