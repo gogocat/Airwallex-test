@@ -8,6 +8,12 @@ The UI is base on [Material UI](https://mui.com).
 
 Form state management logic is using [Formik](https://formik.org/) with validation by [Yup](https://github.com/jquense/yup).
 
+# Get start
+
+Clone this repository and then run
+
+`npm install`
+
 
 ## Available Scripts
 
