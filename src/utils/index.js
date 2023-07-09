@@ -4,7 +4,7 @@ export const safeJsonStringify = (data) => {
     } catch(err) {
         console.log(err);
     }
-}
+};
 
 
 export const createValidationInitValues = (obj = {}) => {
@@ -17,4 +17,4 @@ export const createValidationInitValues = (obj = {}) => {
     });
 
     return ret;
-}
+};

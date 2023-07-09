@@ -6,14 +6,14 @@ import './Footer.scss';
 
 function Copyright() {
     return (
-      <Typography variant="body2" color="text.secondary" align="center">
-        {'© '}
-        {new Date().getFullYear()}
-        {' Broccoli & co. All rights reserved.'}
-        {'.'}
-      </Typography>
+        <Typography variant="body2" color="text.secondary" align="center">
+            {'© '}
+            {new Date().getFullYear()}
+            {' Broccoli & co. All rights reserved.'}
+            {'.'}
+        </Typography>
     );
-  }
+}
 
 function Footer() {
     return (

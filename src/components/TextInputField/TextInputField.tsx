@@ -20,18 +20,18 @@ function TextInputField(props: ITextInputFieldProps) {
     const [field, meta] = useField(restProps);
 
     return (
-      <TextField
-          fullWidth
-          id={id || props.name}
-          name={props.name}
-          label={label}
-          value={field.value}
-          onChange={field.onChange}
-          error={meta.touched && Boolean(meta.error)}
-          helperText={meta.touched && meta.error}
-          margin="normal"
+        <TextField
+            fullWidth
+            id={id || props.name}
+            name={props.name}
+            label={label}
+            value={field.value}
+            onChange={field.onChange}
+            error={meta.touched && Boolean(meta.error)}
+            helperText={meta.touched && meta.error}
+            margin="normal"
         />
     );
-  }
+}
 
-  export default TextInputField;
+export default TextInputField;

@@ -3,10 +3,10 @@ import {
     render,
     screen
 } from '@testing-library/react';
-import App from './App';
+import App from 'components/App/App';
 
 describe('App', () => {
-    it('should renders', () => {
+    it('should renders with HeroIntro content', () => {
         const {
             asFragment,
         } = render(<App />);

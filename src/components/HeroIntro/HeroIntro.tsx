@@ -74,7 +74,7 @@ function HeroIntro() {
                 aria-labelledby="responsive-dialog-title"
             >
                 <div className="dialog-close">
-                    <IconButton onClick={(e)=>{handleDialogClose(e, '')}}>
+                    <IconButton onClick={(e)=>{handleDialogClose(e, '');}}>
                         <CloseIcon />
                     </IconButton>
                 </div>

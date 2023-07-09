@@ -13,8 +13,8 @@ function Header() {
                     BROCCOLI & CO.
                 </Typography>
             </Toolbar>
-      </AppBar>
-    )
+        </AppBar>
+    );
 }
 
 export default Header;
