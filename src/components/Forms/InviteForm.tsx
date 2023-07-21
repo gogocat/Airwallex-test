@@ -9,13 +9,14 @@ import TextInputField from 'components/TextInputField/TextInputField';
 import {
     inviteFormValidationSchema,
     inviteFormValidationInitValues,
+    IInviteFormValues,
 } from 'validationSchemas/inviteFormValidationSchema';
 import { postInvite } from 'services/inviteService';
 import './InviteForm.scss';
 
 interface IInviteFormProps {
   classNames?: string
-  onSuccess?: any
+  onSuccess?: (event: React.SyntheticEvent, reason: string) => void
 }
 
 function InviteForm(props: IInviteFormProps) {
@@ -32,11 +33,11 @@ function InviteForm(props: IInviteFormProps) {
         ? 'Send'
         : 'Sending, please wait...';
 
-    const handleFormSubmit = async (values: any) => {
+    const handleFormSubmit = async (values: IInviteFormValues) => {
         try {
             const {
-                fullName,
-                email,
+                fullName = '',
+                email = '',
             } = values;
 
             if (isSubmitting) {
@@ -72,7 +73,7 @@ function InviteForm(props: IInviteFormProps) {
                         variant="contained" 
                         fullWidth 
                         type="button"
-                        onClick={onSuccess}
+                        onClick={(e)=> onSuccess(e, '')}
                     >
                 OK
                     </Button>

@@ -23,7 +23,7 @@ function HeroIntro() {
         setOpen(true);
     };
 
-    const handleDialogClose = (event: any, reason: string) => {
+    const handleDialogClose = (event: React.SyntheticEvent, reason: string) => {
         if (reason === 'backdropClick') {
             return;
         }

@@ -7,6 +7,7 @@ interface IIviteData {
 }
 
 export async function postInvite(data: IIviteData) {
+    
     // eslint-disable-next-line no-useless-catch
     try {
         const response = await fetch(inviteAPI, {

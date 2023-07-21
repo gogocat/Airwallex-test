@@ -1,6 +1,12 @@
 import * as yup from 'yup';
 import { createValidationInitValues } from 'utils';
 
+export interface IInviteFormValues {
+    fullName?: string,
+    email?: string,
+    confirmEmail?: string,
+}
+
 export const inviteFormValidationSchema = yup.object({
     fullName: yup
         .string()
@@ -16,4 +22,3 @@ export const inviteFormValidationSchema = yup.object({
 });
 
 export const inviteFormValidationInitValues = createValidationInitValues(inviteFormValidationSchema.fields);
-

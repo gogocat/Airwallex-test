@@ -27,6 +27,7 @@ function TextInputField(props: ITextInputFieldProps) {
             label={label}
             value={field.value}
             onChange={field.onChange}
+            onBlur={field.onBlur}
             error={meta.touched && Boolean(meta.error)}
             helperText={meta.touched && meta.error}
             margin="normal"
